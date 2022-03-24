@@ -1,0 +1,28 @@
+spring:  
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:db/games;DB_CLOSE_DELAY=-1
+    username: sa
+    password: sa
+  
+  sql:
+    init:
+      dataLocations: classPath:/games_service.sql  
+  
+  
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddlAuto: create-drop
+
+server:
+    port: 8081
+
+eureka:
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+      
+      
